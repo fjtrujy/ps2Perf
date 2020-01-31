@@ -8,7 +8,7 @@
 EE_OBJS_DIR = ../obj/
 EE_LIB_DIR = ../lib/
 EE_LIB = $(EE_LIB_DIR)libps2Perf.a
-EE_OBJS = $(EE_OBJS_DIR)ps2Perf.o
+EE_OBJS = ps2Perf.o
 EE_INC = ../../include/
 EE_INCS += -I$(EE_INC)
 
@@ -19,9 +19,6 @@ $(EE_OBJS_DIR):
 
 $(EE_LIB_DIR):
 	mkdir -p $(EE_LIB_DIR)
-
-$(EE_OBJS_DIR)%.o : %.c
-	$(EE_C_COMPILE) -c $< -o $@
 
 install: all
 	mkdir -p $(DESTDIR)$(PS2DEV)/ps2Perf/lib
